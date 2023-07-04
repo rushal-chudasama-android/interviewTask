@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.rushal.interview.presentation.viewmodels.SingleImageViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_bg">
+
+
+        <com.github.toxa2033.ScaleImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_bg"
+            android:backgroundTint="@color/dark_bg"
+            android:contentDescription="@string/image"
+            app:dismiss_enabled="true"
+            app:imageFromUrl="@{viewmodel.imageString}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shouldRound="@{viewmodel.shouldRound}"
+            app:zoom_enabled="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
